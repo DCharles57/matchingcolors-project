@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Match</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <h1>Color Match</h1>
+      <p class="sub">Click the tile that matches the target color.</p>
+    </header>
+
+    <section class="hud" aria-label="Game status">
+      <div class="targetWrap">
+        <div class="label">Target</div>
+        <div id="targetSwatch" class="swatch" aria-label="Target color swatch"></div>
+        <div class="hexRow">
+          <span class="muted">HEX:</span>
+          <code id="targetHex">#------</code>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="label">Score</div>
+          <div id="score" class="value">0</div>
+        </div>
+        <div class="stat">
+          <div class="label">Streak</div>
+          <div id="streak" class="value">0</div>
+        </div>
+        <div class="stat">
+          <div class="label">Round</div>
+          <div id="round" class="value">1</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="Controls">
+      <div class="difficulty">
+        <span class="label">Difficulty</span>
+        <div class="seg" role="group" aria-label="Difficulty selector">
+          <button class="segBtn" data-difficulty="easy" aria-pressed="true">Easy</button>
+          <button class="segBtn" data-difficulty="medium" aria-pressed="false">Medium</button>
+          <button class="segBtn" data-difficulty="hard" aria-pressed="false">Hard</button>
+        </div>
+      </div>
+
+      <button id="newRoundBtn" class="primary">New Round</button>
+      <button id="resetBtn" class="ghost">Reset</button>
+    </section>
+
+    <section class="boardWrap" aria-label="Choices">
+      <div id="board" class="board" aria-live="polite"></div>
+      <p id="message" class="message" aria-live="polite"></p>
+    </section>
+
+    <footer class="footer">
+      Tip: On harder modes, colors get *really* close. Trust your eyes 😈
+    </footer>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
